@@ -1,6 +1,6 @@
 version: "0.1.0"
 pre_ci_boot:
-    image: dockerq/docker-sonar-maven
+    image: maven:3.5.2-jdk-7-alpine
     tag: latest
 ci:
     - mvn package jacoco:report
