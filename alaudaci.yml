@@ -1,7 +1,7 @@
 version: "0.1.0"
 pre_ci_boot:
     image: maven
-    tag: 3.5.2-jdk-7-alpine
+    tag: 3.5.2-jdk-8-alpine
 ci:
     - mvn package jacoco:report
     - mvn sonar:sonar -Dsonar.host.url=https://sonar.adolphlwq.xyz
