@@ -1,0 +1,10 @@
+version: "0.1.0"
+pre_ci_boot:
+    image: dockerq/docker-sonar-maven
+    tag: latest
+ci:
+    - mvn package jacoco:report
+    - mvn sonar:sonar
+    - cp -r app-java/target/site/jacoco $ALAUDACI_UPLOAD_DIR
+    - echo $ALAUDACD_UPLOAD_DIR
+    - echo $ALAUDACI_UPLOAD_DIR
