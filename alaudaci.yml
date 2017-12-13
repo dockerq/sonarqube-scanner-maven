@@ -4,7 +4,7 @@ pre_ci_boot:
     tag: latest
 ci:
     - mvn package jacoco:report
-    - mvn sonar:sonar
+    - mvn sonar:sonar -Dsonar.host.url=https://sonar.adolphlwq.xyz
     - cp -r app-java/target/site/jacoco $ALAUDACI_UPLOAD_DIR
     - echo $ALAUDACD_UPLOAD_DIR
     - echo $ALAUDACI_UPLOAD_DIR
