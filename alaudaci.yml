@@ -3,8 +3,9 @@ pre_ci_boot:
     image: maven
     tag: 3.5.2-jdk-8-alpine
 ci:
-    - mvn package jacoco:report
+    - mvn clean install
+    - mvn jacoco:report
     - mvn sonar:sonar -Dsonar.host.url=https://sonar.adolphlwq.xyz
-    - cp -r app-java/target/site/jacoco $ALAUDACI_UPLOAD_DIR
-    - echo $ALAUDACD_UPLOAD_DIR
-    - echo $ALAUDACI_UPLOAD_DIR
+    - cp -r app-java/target $ALAUDACI_UPLOAD_DIR/targetall
+    # - echo $ALAUDACD_UPLOAD_DIR
+    # - echo $ALAUDACI_UPLOAD_DIR
